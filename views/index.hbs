@@ -18,4 +18,15 @@
 
 <p><a href="{{apod.nasa_url}}">See this image at NASA's website</a></p>
 
+<div class="add-favorite-form">
+    <form action="favorites/add" method="POST">
+        <input type="hidden" name="title" value="{{ apod.title }}">
+        <input type="hidden" name="date" value="{{ apod.date }}">
+        <input type="hidden" name="url" value="{{ apod.url }}">
+        <input type="hidden" name="nasa_url" value="{{ apod.nasa_url }}">
+        <button type="submit" class="btn btn-success" name="add">Add to Favorites</button>
+    </form>
+</div>
+
+
 

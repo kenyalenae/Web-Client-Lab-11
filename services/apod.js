@@ -35,8 +35,8 @@ function apodRequest(callback, type) {
         // return callback({message: 'Not really an error'});
 
         var queryParam = {};
-        var APIKEY = process.env.APOD_API_KEY;  // Make sure an environment variable is set, containing a valid APOD key
-
+        //var APIKEY = process.env.APOD_API_KEY;  // Make sure an environment variable is set, containing a valid APOD key
+        var APIKEY = 'OmdzG9T64cIerUFQl2isQoYc6QZ5dPBixcXEaxij'
         if (type && type.toLowerCase() === 'random') {
             queryParam = { api_key : APIKEY,  date: randomDateString()  };
         }

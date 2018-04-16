@@ -1,0 +1,42 @@
+<h1>Favorites</h1>
+
+<div class="fav-list">
+
+    {{#each favorites}}
+
+        <div class="fav-item">
+            <a href="{{ this.nasa_url }}">
+                <img class="fav-image" src="{{ this.url }}">
+            </a>
+
+            <span class="fav-title">{{ this.title }}</span>
+            <span class="fav-data">{{ this.date }}</span>
+        </div>
+
+        <div class="delete-favorite-item-form">
+            <form action="favorites/delete" method="POST">
+                <input type="hidden" name="title" value="{{ apod.title }}">
+                <input type="hidden" name="date" value="{{ apod.date }}">
+                <input type="hidden" name="url" value="{{ apod.url }}">
+                <input type="hidden" name="nasa_url" value="{{ apod.nasa_url }}">
+                <button type="submit" class="btn btn-success" name="delete">Delete Item</button>
+            </form>
+        </div>
+
+    {{else}}
+
+        <p>No favorites saved yet.</p>
+
+    {{/each}}
+
+    <div class="delete-all-favorites-form">
+        <form action="favorites/deleteAll" method="POST">
+            <input type="hidden" name="title" value="{{ apod.title }}">
+            <input type="hidden" name="date" value="{{ apod.date }}">
+            <input type="hidden" name="url" value="{{ apod.url }}">
+            <input type="hidden" name="nasa_url" value="{{ apod.nasa_url }}">
+            <button type="submit" class="btn btn-success" name="deleteAll">Delete All Favorite Items</button>
+        </form>
+    </div>
+
+</div>
