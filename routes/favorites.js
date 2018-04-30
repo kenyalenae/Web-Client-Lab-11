@@ -31,7 +31,17 @@ router.post('/add', function(req, res, next){
 });
 
 /* POST to delete individual items off of favorites page */
-// router.post('/delete', function(req, res, next){
+
+router.post('/delete', function(req, res, next){
+
+    // find item in favorites array and then delete item
+    req.session.favorites = req.session.favorites.filter(function(fav) {
+        return fav.date !== req.body.date
+    });
+
+    res.redirect('/favorites');
+
+});
 
 
 
