@@ -36,7 +36,7 @@ router.post('/delete', function(req, res, next){
 
     // find item in favorites array and then delete item
     req.session.favorites = req.session.favorites.filter(function(fav) {
-        return fav.date !== req.body.date
+        return (fav.date !== req.body.date)
     });
 
     res.redirect('/favorites');

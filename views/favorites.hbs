@@ -15,10 +15,7 @@
 
         <div class="delete-favorite-item-form">
             <form action="favorites/delete" method="POST">
-                <input type="hidden" name="title" value="{{ apod.title }}">
-                <input type="hidden" name="date" value="{{ apod.date }}">
-                <input type="hidden" name="url" value="{{ apod.url }}">
-                <input type="hidden" name="nasa_url" value="{{ apod.nasa_url }}">
+                <input type="hidden" name="date" value="{{ this.date }}">
                 <button type="submit" class="btn btn-success" name="delete">Delete Item</button>
             </form>
         </div>
